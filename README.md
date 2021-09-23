@@ -11,7 +11,7 @@ export BITBUCKET_TOKEN=<Add your BITBUCKET_TOKEN>
 ```
 - Run the migration script with proper arguments
 ```bash
-./run.sh <repository_name> <github_org_name> <bitbucket_org_name>
+./run.sh <repository_name> <github_org_name> <bitbucket_org_name> <total_pull_requests>
 ```
 ##### In the new Github repositry it should create issue with the below inforamtion:
 ```txt
