@@ -11,7 +11,7 @@ github_client = Github(os.getenv("GITHUB_TOKEN"))
 repository = sys.argv[1]
 github_org_name = sys.argv[2]
 bitbucket_org_name = sys.argv[3]
-
+total_pull_requests = sys.argv[4]
 
 def github_create_issue():
     repo = github_client.get_repo(f"{github_org_name}/{repository}")
@@ -84,7 +84,7 @@ def bitbucket_get_pull_request(repo: str, pr_id: int):
     }
 
 
-with click.progressbar(length=34700, label='Migrating issues') as bar:
+with click.progressbar(length=total_pull_requests, label='Migrating issues') as bar:
     while True:
         issue_id = github_create_issue()
         bar.update(1, issue_id)
