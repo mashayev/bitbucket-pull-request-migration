@@ -84,7 +84,7 @@ def bitbucket_get_pull_request(repo: str, pr_id: int):
     }
 
 
-with click.progressbar(length=total_pull_requests, label='Migrating issues') as bar:
+with click.progressbar(length=int(total_pull_requests), label='Migrating issues') as bar:
     while True:
         issue_id = github_create_issue()
         bar.update(1, issue_id)
